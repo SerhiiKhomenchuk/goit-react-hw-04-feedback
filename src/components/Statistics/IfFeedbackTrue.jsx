@@ -1,13 +1,13 @@
 import { StatItem } from './Statistics.styled';
 
 export const IfFeedbackTrue = ({
-  state,
+  feedbackType,
   countTotalFeedback,
   positivePercentage,
 }) => {
   return (
     <>
-      {Object.entries(state).map(([key, value]) => {
+      {Object.entries(feedbackType).map(([key, value]) => {
         return (
           <StatItem key={key}>
             {key}: {value}

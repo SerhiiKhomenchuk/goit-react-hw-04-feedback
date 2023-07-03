@@ -7,7 +7,7 @@ const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const state = { good, neutral, bad };
+  const feedbackType = { good, neutral, bad };
 
   const onLeaveFeedback = option => {
     switch (option) {
@@ -27,7 +27,7 @@ const App = () => {
   };
 
   const countTotalFeedback = () => {
-    const values = Object.values(state);
+    const values = Object.values(feedbackType);
     return values.reduce((accumulator, current) => accumulator + current, 0);
   };
 
@@ -38,7 +38,7 @@ const App = () => {
     return percentage;
   };
 
-  const options = Object.keys(state);
+  const options = Object.keys(feedbackType);
 
   return (
     <div
@@ -55,7 +55,7 @@ const App = () => {
     >
       <FeedbackOptions options={options} onLeaveFeedback={onLeaveFeedback} />
       <Statistics
-        state={state}
+        feedbackType={feedbackType}
         countTotalFeedback={countTotalFeedback()}
         positivePercentage={countPositiveFeedbackPercentage()}
       ></Statistics>

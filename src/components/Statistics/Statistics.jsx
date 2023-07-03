@@ -2,18 +2,17 @@ import { IfFeedbackTrue } from './IfFeedbackTrue';
 import { Notification } from './Notification';
 
 export const Statistics = ({
-  state,
+  feedbackType,
   options,
   countTotalFeedback,
   positivePercentage,
 }) => {
-  
   return (
     <>
       <h2> Statistics</h2>
       {countTotalFeedback ? (
         <IfFeedbackTrue
-          state={state}
+          feedbackType={feedbackType}
           options={options}
           countTotalFeedback={countTotalFeedback}
           positivePercentage={positivePercentage}
